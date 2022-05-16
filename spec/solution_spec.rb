@@ -1,8 +1,13 @@
-require 'solutions.rb'
+require 'solution.rb'
 
-describe 'solutions' do
-    it 'This is a test for testing a string past 
-    string within a product' do
-        expect(development("a")).to eq("A")
+describe 'JobDependency' do
+    it 'Class initializes 2 attributes' do
+        JobDependency.configure do | config |
+            config.job_string = "a =>"
+            config.final_sequence = "a"
+        end
+        
+        expect(JobDependency.config).to eq("a")
+        expect(JobDependency.config).to eq("")
     end
 end
