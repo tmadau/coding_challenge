@@ -35,15 +35,15 @@ if a depends on c, it will output c => a
 =end
 def jobs_test(jobs)
     job_structure = ""
-    
+
     for job in jobs
         puts job.job_string
         job_structure = gets.chomp()
         if job_structure == job.job_dependency
             puts "Error: job cannot depend on itself"
             exit
-        elsif job_structure.length > 0
-            puts "Error: Only one character string characters allowed"
+        elsif job_structure.length > 1
+            puts "Error: Only one character string allowed for job dependency"
             exit
         elsif job_structure != job.job_dependency
             puts "#{job_structure} => #{job.job_dependency}"
