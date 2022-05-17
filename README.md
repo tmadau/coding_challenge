@@ -6,7 +6,7 @@ Imagine a job as a string. Now imagine that it is not only one job. But multiple
 
 ## Solution
 
-So the solution for me is to create a ruby class "JobDependency" that will be the parent of "FinalSequence" class. The parent class will have 2 attributes "job_string" and "job_dependency". "job_string" will take in an array of characters representing the jobs, "job_dependency" will take the array stored in "job_string" and give a sequence output containing all the jobs that where stored in "job_string".
+So the solution for me is to create a ruby class "JobDependency" that will have 2 attributes "job_string" and "job_dependency". "job_string" will take in an array of characters representing the jobs, "job_dependency" will take the array stored in "job_string" and ask for a character each job will depend upon.
 
 ## Language
 

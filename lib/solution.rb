@@ -35,7 +35,7 @@ if a depends on c, it will output c => a
 =end
 def jobs_test(jobs)
     job_structure = ""
-
+    
     for job in jobs
         puts job.job_string
         job_structure = gets.chomp()
