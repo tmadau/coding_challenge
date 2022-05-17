@@ -1,12 +1,12 @@
 =begin
 Class with two attributes. job_string for string characters
-to be matched, final_sequence will validate job_string characters
+to be matched, job_dependency will validate job_string characters
 =end
 class JobDependency
-    attr_accessor :job_string, :final_sequence
-    def initialize(job_string, final_sequence)
+    attr_accessor :job_string, :job_dependency
+    def initialize(job_string, job_dependency)
         @job_string = job_string
-        @final_sequence = final_sequence
+        @job_dependency = job_dependency
     end
 end
 
@@ -38,11 +38,14 @@ def jobs_test(jobs)
     for job in jobs
         puts job.job_string
         answer = gets.chomp()
-        if answer == job.final_sequence
+        if answer == job.job_dependency
             puts "Error: job cannot depend on itself"
             exit
-        elsif answer != job.final_sequence
-            puts "#{answer} => #{job.final_sequence}"
+        elsif answer.length > 0
+            puts "Error: Only one character string characters allowed"
+            exit
+        elsif answer != job.job_dependency
+            puts "#{answer} => #{job.job_dependency}"
         end
     end
 end
