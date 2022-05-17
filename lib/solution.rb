@@ -34,18 +34,19 @@ the input and give the proper order of the jobs
 if a depends on c, it will output c => a
 =end
 def jobs_test(jobs)
-    answer = ""
+    job_structure = ""
+
     for job in jobs
         puts job.job_string
-        answer = gets.chomp()
-        if answer == job.job_dependency
+        job_structure = gets.chomp()
+        if job_structure == job.job_dependency
             puts "Error: job cannot depend on itself"
             exit
-        elsif answer.length > 0
+        elsif job_structure.length > 0
             puts "Error: Only one character string characters allowed"
             exit
-        elsif answer != job.job_dependency
-            puts "#{answer} => #{job.job_dependency}"
+        elsif job_structure != job.job_dependency
+            puts "#{job_structure} => #{job.job_dependency}"
         end
     end
 end
